@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+    .w30 {
+        width: 30%;
+    }
+
+    .mt1 {
+        margin-top: 2%;
+    }
+</style>
+
+<div class="container">
+    <div class="row w30">
+        <div class="row">
+            <label>First Name</label>
+            <input type="text" class="form-control" id="firstname" />
+        </div>
+        <div class="row">
+            <label>Last Name</label>
+            <input type="text" class="form-control" id="secondname" />
+        </div>
+        <div class="row">
+            <label>Male</label>
+            <input type="radio" name="gender" value="male" />
+            <label>Female</label>
+            <input type="radio" name="gender" value="female" />
+        </div>
+        <div class="row mt1">
+            <input type="button" value="submit" class="btn" onclick="showalert()" />
+        </div>
+    </div>
+    <div id="table"></div>
+</div>
+
+<script>
+   
+    function showalert() {
+        var firstname = document.getElementById("firstname").value;
+        var secondname = document.getElementById("secondname").value;
+        var gender = document.querySelector('input[name="gender"]:checked').value;
+
+        var stringBuilder = "";
+        stringBuilder += "<table>";
+        stringBuilder += "<tr>";
+        stringBuilder += "<thead>Name</thead>";
+        stringBuilder += "<thead>Gender</thead>";
+        stringBuilder += "<tr>";
+        stringBuilder += "<tr>";
+        stringBuilder += "<td>" + firstname + "</td>";
+        stringBuilder += "<td>" + gender + "</td>";
+        stringBuilder += "<tr>";
+
+        stringBuilder += "</table>";
+        document.getElementById("table").innerHTML = stringBuilder;
+        console.log(firstname + " " + secondname + " " + gender);
+    }
+</script>
